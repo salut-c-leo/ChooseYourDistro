@@ -1,0 +1,44 @@
+#ootb {
+  display: none;
+}
+#old {
+  display: none;
+}
+#rolling {
+  display: none;
+}
+#inssi {
+  display: none;
+}
+#Result {
+  display: none;
+}
+#archdisk {
+  display: none;
+}
+#gendisk {
+  display: none;
+}
+footer {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  padding-bottom: auto;
+  background-color: #f5f5f5;
+}
+@media only screen and (max-width: 500px) {
+  footer {
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    padding-bottom: auto;
+    background-color: #f5f5f5;
+  }
+}
+div {
+  text-align: center;
+}

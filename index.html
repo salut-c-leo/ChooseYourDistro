@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+  <head>
+    <title>Choisis ton GNU</title>
+    <meta charset="utf-8">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <meta name="viewport" content="width=450, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@monsieurtino" />
+    <meta name="twitter:title" content="Choisis ton GNU" />
+    <meta name="twitter:description" content="Réponds aux questions et découvre quelle distribution GNU/Linux te correspond le plus !" />
+    <meta name="twitter:image" content="https://controle-tes-donnees.net/wp-content/uploads/sites/3/2016/04/GNU-Linux_logo.png" />
+  </head>
+  <body>
+    <div class="jumbotron">
+        <h1>Choisis ton GNU</h1>
+        <p>Ce site propose une distribution <a href="https://fr.wikipedia.org/wiki/Distribution_Linux">GNU/Linux</a> qui correspond à tes critères. <br/> Réponds aux questions et laisse la magie opérer !</p>
+    </div>
+
+    <div id="infosi">
+      <h2>L'informatique, ça peut aller ou c'est une horreur ?</h2>
+      <br/>
+      <button type="button" id="btn-infosis" class="btn btn-infosi btn-infosis btn-lg btn-success">Ça passe oui</button> <!-- btn-infosis correspond au bouton vert, success. btn-infosid correspond au bouton rouge, danger. Il en va autant pour les autres boutons. -->
+      <button type="button" id="btn-infosid" class="btn btn-infosi btn-infosid btn-lg btn-danger">C'est affreux</button>
+    </div>
+
+    <div id="ootb">
+      <h2>Tout doit fonctionner « out of the box » (rien à faire, c'est le système qui gère) ou c'est bien de tout configurer soi-même ?</h2>
+      <br/>
+      <button type="button" id="btn-ootbs" class="btn btn-ootb btn-ootbs btn-lg btn-success">Je veux pas me prendre la tête</button>
+      <button type="button" id="btn-ootbd" class="btn btn-ootb btn-ootbd btn-lg btn-danger">J'aime faire ma propre sauce</button>
+    </div>
+
+    <div id="old">
+      <h2>C'est pour un ordi récent ou non ?</h2>
+      <br/>
+      <button type="button" id="btn-olds" class="btn btn-old btn-olds btn-lg btn-success">Récent (2011+)</button>
+      <button type="button" id="btn-oldd" class="btn btn-old btn-oldd btn-lg btn-danger">Ancien (-2011)</button>
+    </div>
+
+    <div id="rolling">
+      <h2>Les logiciels devraient être mis à jour dès que possible (rolling release, pas de garantie de stabilité) ou quand la mise à jour est stable ?</h2>
+      <button type="button" id="btn-rollings" class="btn btn-rolling btn-rollings btn-lg btn-success">Rolling Release</button>
+      <button type="button" id="btn-rollingd" class="btn btn-rolling btn-rollingd btn-lg btn-danger">Stable</button>
+    </div>
+
+    <div id="inssi">
+      <h2>L'installation doit être simple ou c'est pas grave ?</h2>
+      <button type="button" id="btn-inssis" class="btn btn-inssi btn-inssis btn-lg btn-success">Je veux que tout soit simple</button>
+      <button type="button" id="btn-inssid" class="btn btn-inssi btn-inssid btn-lg btn-danger">J'aime les lignes de commandes</button>
+    </div>
+
+    <div id="Result">
+      <h2>La distribution qui correspond le plus à tes critères est <span id="results"></span>.</h2>
+      <p>Télécharge <span id="resultat"></span> <a href="" id="lien">ici</a>.</p>
+      <p>(Et si <span id="mwa"></span> ne te plaît pas, il y a aussi <span id="moui"></span> dans la liste)</p>
+      <p>Et n'oublie pas d'activer le chiffrement de tes fichiers, on sait jamais par les temps qui courent…</p>
+      <p id="archdisk">Dans le cas d'Arch Linux, voici une page du <a href="https://wiki.archlinux.org/index.php/Disk_encryption">wiki</a> à ce sujet.</p>
+      <p id="gendisk">Ubuntu et les autres distributions générales proposent lors de l'installation soit de chiffrer le disque dur entier, soit le dossier personnel. À toi de voir.</p>
+    </div>
+
+
+
+    <br/>
+    <div id="Restart">
+      <button type="button" id="btn-restart" class="btn btn-restart btn-lg">Recommencer ?</button>
+    </div>
+
+    <br/>
+
+    <footer>
+      <p><em>Choisis ton GNU</em> est réalisé par <a href="https://mrtino.eu">Monsieur Tino</a>. <br/> Les résultats proposés par ce site ne sont pas exhaustifs, le choix est subjectif (comme tout dans ce monde). Pour une liste plus complète, voir <a href="http://distrowatch.com">DistroWatch</a>. <br/><em>Choisis ton GNU</em> est sous licence MIT, les sources sont disponibles <a href="https://github.com/mrtino/ChooseYourDistro">ici</a>.<br/>Si ce site te plaît et que tu veux récompenser mon dur labeur, tu peux me donner de l'argent <a href="bitcoin:1CWcdZ2yfJQvsBzYp935h16PJaSq7jLSAn">en Bitcoin</a> ou sur <a href="https://paypal.me/monsieurtino">PayPal</a> !</p>
+    </footer>
+
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="questions.js"></script>
+    <script src="results.js"></script>
+  </body>
+<html>
