@@ -77,154 +77,34 @@ document.getElementById('btn-inssis').onclick = function() {
   sabayon = ++sabayon;
   fedora = ++fedora;
 
-  // Classement des distributions
-  distros.push({
-    distro: 'Arch Linux',
-    score: arch,
-  });
-
-  distros.push({
-    distro: 'Gentoo',
-    score: gentoo
-  });
-
-  distros.push({
-    distro: 'Sabayon',
-    score: sabayon
-  });
-
-  distros.push({
-    distro: 'Fedora',
-    score: fedora
-  });
-
-  distros.push({
-    distro: 'Debian GNU/Linux',
-    score: deb
-  });
-
-  distros.push({
-    distro: 'HandyLinux',
-    score: handy
-  });
-
-  distros.push({
-    distro: 'Ubuntu',
-    score: ubuntu
-  });
-
-  distros.push({
-    distro: 'Puppy Linux',
-    score: puppy
-  });
-
-  distros.push({
-    distro: 'Chromium OS',
-    score: chromium
-  });
-
-  distros.sort(function(a, b) {
-    return b.score - a.score;
-  });
-
-  console.log(distros.distro);
-  console.log(distros[0].distro);
-  $('#results').text(distros[0].distro);
-  $('#moui').text(distros[1].distro);
-  $('#mwa').text(distros[0].distro);
-
-  if(distros[0].distro == 'Arch Linux') {
-    $("#lien").attr("href", "https://archlinux.org"),
-    $("#resultat").text(distros[0].distro),
-    $("#archdisk").show()
-  };
-  if(distros[0].distro == 'Debian GNU/Linux') {
-        $("#lien").attr("href", "https://debian.org"),
-        $("#resultat").text(distros[0].distro),
-        $("#gendisk").show()
-  };
-  if(distros[0].distro == 'Chromium OS') {
-        $("#lien").attr("href", "https://arnoldthebat.co.uk/wordpress/chromium-os/"),
-        $("#resultat").text(distros[0].distro)
-  };
-  if(distros[0].distro == 'Fedora') {
-        $("#lien").attr("href", "https://getfedora.org"),
-        $("#resultat").text(distros[0].distro),
-        $("#gendisk").show()
-  };
-  if(distros[0].distro == 'HandyLinux') {
-        $("#lien").attr("href", "https://handylinux.org/"),
-        $("#resultat").text(distros[0].distro)
-  };
-  if(distros[0].distro == 'Puppy Linux') {
-        $("#lien").attr("href", "http://puppylinux.com/"),
-        $("#resultat").text(distros[0].distro)
-  };
-  if(distros[0].distro == 'Gentoo') {
-        $("#lien").attr("href", "https://gentoo.org"),
-        $("#resultat").text(distros[0].distro)
-  };
-  if(distros[0].distro == 'Sabayon') {
-        $("#lien").attr("href", "https://www.sabayon.org/"),
-        $("#resultat").text(distros[0].distro),
-        $("#gendisk").show()
-  };
-  if(distros[0].distro == 'Ubuntu') {
-        $("#lien").attr("href", "https://www.ubuntu.com"),
-        $("#resultat").text(distros[0].distro)
-        $("#gendisk").show()
-  };
+  showResult();
 };
 
 document.getElementById('btn-inssid').onclick = function() {
   arch = ++arch;
   gentoo = ++gentoo;
 
+  showResult();
+};
+
+function showResult() { // Merci à @Sp3r4z pour cette fonction super utile !
+
+  // Pour masquer les conseils de chiffrement selon distrib
+  $("#archdisk").hide();
+  $("#gendisk").hide();
+
   // Classement des distributions
-  distros.push({
-    distro: 'Arch Linux',
-    score: arch
-  });
-
-  distros.push({
-    distro: 'Gentoo',
-    score: gentoo
-  });
-
-  distros.push({
-    distro: 'Sabayon',
-    score: sabayon
-  });
-
-  distros.push({
-    distro: 'Fedora',
-    score: fedora
-  });
-
-  distros.push({
-    distro: 'Debian GNU/Linux',
-    score: deb
-  });
-
-  distros.push({
-    distro: 'HandyLinux',
-    score: handy
-  });
-
-  distros.push({
-    distro: 'Ubuntu',
-    score: ubuntu
-  });
-
-  distros.push({
-    distro: 'Puppy Linux',
-    score: puppy
-  });
-
-  distros.push({
-    distro: 'Chromium OS',
-    score: chromium
-  });
+  distros.push(
+    {distro: 'Arch Linux',score: arch},
+    {distro: 'Gentoo',score: gentoo},
+    {distro: 'Sabayon',score: sabayon},
+    {distro: 'Fedora',score: fedora},
+    {distro: 'Debian GNU/Linux',score: deb},
+    {distro: 'HandyLinux',score: handy},
+    {distro: 'Ubuntu',score: ubuntu},
+    {distro: 'Puppy Linux',score: puppy},
+    {distro: 'Chromium OS',score: chromium}
+  );
 
   distros.sort(function(a, b) {
     return b.score - a.score;
@@ -236,47 +116,20 @@ document.getElementById('btn-inssid').onclick = function() {
   $('#moui').text(distros[1].distro);
   $('#mwa').text(distros[0].distro);
 
-  if(distros[0].distro == 'Arch Linux') {
-        $("#lien").attr("href", "https://archlinux.org"),
-        $("#resultat").text(distros[0].distro),
-        $("#archdisk").show()
+  switch(distros[0].distro) {
+    case 'Arch Linux': $("#lien").attr("href", "https://archlinux.org"); $("#archdisk").show(); break;
+    case 'Debian GNU/Linux': $("#lien").attr("href", "https://debian.org"); $("#gendisk").show(); break;
+    case 'Chromium OS': $("#lien").attr("href", "https://arnoldthebat.co.uk/wordpress/chromium-os/"); break;
+    case 'Fedora': $("#lien").attr("href", "https://getfedora.org"); $("#gendisk").show(); break;
+    case 'HandyLinux': $("#lien").attr("href", "https://handylinux.org/"); break;
+    case 'Puppy Linux':  $("#lien").attr("href", "http://puppylinux.com/"); break;
+    case 'Gentoo': $("#lien").attr("href", "https://gentoo.org"); break;
+    case 'Sabayon': $("#lien").attr("href", "https://www.sabayon.org/"); $("#gendisk").show(); break;
+    case 'Ubuntu': $("#lien").attr("href", "https://ubuntu.com"); $("#gendisk").show(); break;
   };
-  if(distros[0].distro == 'Debian GNU/Linux') {
-        $("#lien").attr("href", "https://debian.org"),
-        $("#resultat").text(distros[0].distro),
-        $("#gendisk").show()
-  };
-  if(distros[0].distro == 'Chromium OS') {
-        $("#lien").attr("href", "https://arnoldthebat.co.uk/wordpress/chromium-os/"),
-        $("#resultat").text(distros[0].distro)
-  };
-  if(distros[0].distro == 'Fedora') {
-        $("#lien").attr("href", "https://getfedora.org"),
-        $("#resultat").text(distros[0].distro),
-        $("#gendisk").show()
-  };
-  if(distros[0].distro == 'HandyLinux') {
-        $("#lien").attr("href", "https://handylinux.org/"),
-        $("#resultat").text(distros[0].distro)
-  };
-  if(distros[0].distro == 'Puppy Linux') {
-        $("#lien").attr("href", "http://puppylinux.com/"),
-        $("#resultat").text(distros[0].distro)
-  };
-  if(distros[0].distro == 'Gentoo') {
-        $("#lien").attr("href", "https://gentoo.org"),
-        $("#resultat").text(distros[0].distro)
-  };
-  if(distros[0].distro == 'Sabayon') {
-        $("#lien").attr("href", "https://www.sabayon.org/"),
-        $("#resultat").text(distros[0].distro),
-        $("#gendisk").show()
-  };
-  if(distros[0].distro == 'Ubuntu') {
-        $("#lien").attr("href", "https://www.ubuntu.com"),
-        $("#resultat").text(distros[0].distro),
-        $("#gendisk").show()
-  };
+
+  $("#resultat").text(distros[0].distro);
+
 };
 
 document.getElementById('btn-restart').onclick = function() {
