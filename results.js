@@ -52,6 +52,16 @@ document.getElementById('btn-oldd').onclick = function() {
   handy = ++handy;
   puppy = ++puppy;
   deb = ++deb;
+};
+document.getElementById('btn-volds').onclick = function() {
+  deb = ++deb;
+  puppy = ++puppy;
+};
+document.getElementById('btn-voldd').onclick = function() {
+  chromium = ++chromium;
+  handy = ++handy;
+  puppy = ++puppy;
+  deb = ++deb;
   arch = ++arch;
   gentoo = ++gentoo;
 };

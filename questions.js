@@ -6,8 +6,17 @@ $('.btn-ootb').click(function() {
     $('#ootb').hide();
     $('#old').show();
 });
-$('.btn-old').click(function() {
+
+$('.btn-olds').click(function() {
     $('#old').hide();
+    $('#rolling').show();
+});
+$('.btn-oldd').click(function() {
+    $('#old').hide();
+    $('#vold').show();
+});
+$('.btn-vold').click(function() {
+    $('#vold').hide();
     $('#rolling').show();
 });
 $('.btn-rolling').click(function() {
