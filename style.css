@@ -1,6 +1,9 @@
 #ootb {
   display: none;
 }
+#inter {
+  display: none;
+}
 #old {
   display: none;
 }
@@ -22,10 +25,17 @@
 #gendisk {
   display: none;
 }
+#macoschosen {
+  display: none;
+}
+#windowschosen {
+  display: none;
+}
 footer {
   text-align: center;
   position: fixed;
-  bottom: 0;
+  bottom: 0px;
+  left: 0px;
   width: 100%;
   height: auto;
   padding-bottom: auto;

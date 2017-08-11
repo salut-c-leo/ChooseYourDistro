@@ -2,9 +2,9 @@
   <head>
     <title>Choisis ton GNU</title>
     <meta charset="utf-8">
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+    <link href="favicon.ico" rel="icon" type="image/x-icon" />
     <meta name="viewport" content="width=450, maximum-scale=1.0, user-scalable=no, minimal-ui" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@monsieurtino" />
@@ -21,15 +21,24 @@
     <div id="infosi">
       <h2>L'informatique, ça peut aller ou c'est une horreur ?</h2>
       <br/>
-      <button type="button" id="btn-infosis" class="btn btn-infosi btn-infosis btn-lg btn-info">Ça passe oui</button> <!-- btn-infosis correspond au bouton vert, success. btn-infosid correspond au bouton rouge, danger. Il en va autant pour les autres boutons. -->
-      <button type="button" id="btn-infosid" class="btn btn-infosi btn-infosid btn-lg btn-info">C'est affreux</button>
+      <button type="button" id="btn-infosis" class="btn btn-infosi btn-infosis btn-lg btn-info">Largement !</button> <!-- btn-infosis correspond au bouton vert, success. btn-infosid correspond au bouton rouge, danger. Il en va autant pour les autres boutons. -->
+      <button type="button" id="btn-infomid" class="btn btn-infosi btn-infomid btn-lg btn-info">Je sais faire quelques trucs</button>
+      <button type="button" id="btn-infosid" class="btn btn-infosi btn-infosid btn-lg btn-info">Je sais allumer l'ordi c'est déjà ça</button>
     </div>
 
     <div id="ootb">
-      <h2>Tout doit fonctionner « out of the box » (rien à faire, c'est le système qui gère) ou c'est bien de tout configurer soi-même ?</h2>
+        <h2>Tout doit fonctionner <abbr title="Rien à faire, c'est le système qui gère">« out of the box »</abbr> ou c'est bien de tout configurer soi-même ?</h2>
       <br/>
       <button type="button" id="btn-ootbs" class="btn btn-ootb btn-ootbs btn-lg btn-info">Je veux pas me prendre la tête</button>
       <button type="button" id="btn-ootbd" class="btn btn-ootb btn-ootbd btn-lg btn-info">J'aime faire ma propre sauce</button>
+    </div>
+
+    <div id="inter">
+        <h2>Est-ce que le bureau ne doit pas trop dépayser ?</h2>
+        <br/>
+        <button type="button" id="btn-windows" class="btn btn-inter btn-windows btn-lg btn-info">Je veux un truc qui ressemble à Windows</button>
+        <button type="button" id="btn-macos" class="btn btn-inter btn-macos btn-lg btn-info">Je veux un truc qui ressemble à macOS</button>
+        <button type="button" id="btn-linux" class="btn btn-inter btn-linux btn-lg btn-info">Derrière nous le passé, à l'aventure !</button>
     </div>
 
     <div id="old">
@@ -40,14 +49,14 @@
     </div>
 
     <div id="vold">
-      <h2>Vraiment ancien ?</h2>
+        <h2>Vraiment <abbr title="Après 2006, il faudra sûrement prendre une version « Lite » de la distribution">ancien</abbr> ?</h2>
       <br/>
       <button type="button" id="btn-volds" class="btn btn-vold btn-volds btn-lg btn-info">Avant 2006</button>
       <button type="button" id="btn-voldd" class="btn btn-vold btn-voldd btn-lg btn-info">Après 2006</button>
     </div>
 
     <div id="rolling">
-      <h2>Les logiciels devraient être mis à jour dès que possible (rolling release, pas de garantie de stabilité) ou quand la mise à jour est stable ?</h2>
+        <h2>Le système devrait être mis à jour <abbr title="« Rolling Release »">dès que possible</abbr> ou après <abbr title="« Stable »">un temps de test</abbr> ?</h2>
       <button type="button" id="btn-rollings" class="btn btn-rolling btn-rollings btn-lg btn-info">Rolling Release</button>
       <button type="button" id="btn-rollingd" class="btn btn-rolling btn-rollingd btn-lg btn-info">Stable</button>
     </div>
@@ -59,17 +68,17 @@
     </div>
 
     <div id="Result">
-      <h2>La distribution qui correspond le plus à tes critères est <span id="results"></span>.</h2>
-      <p>Télécharge <span id="resultat"></span> <a href="" id="lien">ici</a>.</p>
-      <p>(Et si <span id="mwa"></span> ne te plaît pas, il y a aussi <span id="moui"></span> dans la liste)</p>
-      <p>Et n'oublie pas d'activer le chiffrement de tes fichiers, on sait jamais par les temps qui courent…</p>
-      <p id="archdisk">Dans le cas d'Arch Linux, voici une page du <a href="https://wiki.archlinux.org/index.php/Disk_encryption">wiki</a> à ce sujet.</p>
-      <p id="gendisk">Les distributions générales (Debian, Ubuntu, Fedora...) proposent lors de l'installation soit de chiffrer le disque dur entier, soit le dossier personnel. À toi de voir.</p>
+        <h3>La distribution qui correspond le plus à tes critères est <span id="results"></span>, avec un score de <span id="scoreresult"></span> points.</h3>
+      <p>Télécharge <span id="resultat"></span> <a href="" id="lien">ici</a>.<br>
+          (En deuxième position on trouve <span id="moui"></span> avec <span id="mouiresult"></span> points, <span id="bof"></span> troisième avec <span id="bofresult"></span> points)</p>
+      <p id="windowschosen">Comme tu veux une interface Windows, il est conseillé d'utiliser KDE (si t'a un ordi récent), Cinnamon ou LXDE pour se rapprocher de ce que tu avais auparavant.</p>
+      <p id="macoschosen">Comme tu veux une interface macOS, il est conseillé d'utiliser Budgie ou GNOME.</p>
+      <p>Et n'oublie pas d'activer le chiffrement de tes fichiers, on sait jamais par les temps qui courent…
+      <span id="archdisk">Dans le cas d'Arch Linux, voici une page du <a href="https://wiki.archlinux.org/index.php/Disk_encryption">wiki</a> à ce sujet.</span>
+      <span id="gendisk">Lors de l'installation, on te propose soit de chiffrer le disque dur entier, soit le dossier personnel. À toi de voir.</span></p>
     </div>
 
-
-
-    <br/>
+    <br>
     <div id="Restart">
       <button type="button" id="btn-restart" class="btn btn-restart btn-lg btn-danger" style="display: none;">Recommencer ?</button>
     </div>
@@ -77,12 +86,11 @@
     <br/>
 
     <footer>
-        <p><em>Choisis ton GNU</em> est réalisé par <a href="https://mrtino.eu">Monsieur Tino</a>. <br/> Les résultats proposés par ce site ne sont pas exhaustifs, le choix est subjectif (explications <a href="explications.html">ici</a>). Pour une liste plus complète, voir <a href="http://distrowatch.com">DistroWatch</a>.<br/><em>Choisis ton GNU</em> est sous licence MIT, les sources sont disponibles <a href="https://github.com/mrtino/ChooseYourDistro">ici</a>.<br/>Si ce site te plaît et que tu veux récompenser mon dur labeur, tu peux me donner de l'argent <a href="bitcoin:1CWcdZ2yfJQvsBzYp935h16PJaSq7jLSAn">en Bitcoin</a> ou sur <a href="https://paypal.me/monsieurtino">PayPal</a> !</p>
+        <p><em>Choisis ton GNU</em> est réalisé par <a href="https://mrtino.eu">Monsieur Tino</a>. <br/> Les résultats proposés par ce site ne sont pas exhaustifs, le choix est subjectif (explications <a href="explications.html">ici</a>). Pour une liste plus complète, voir <a href="http://distrowatch.com">DistroWatch</a>.<br/><em>Choisis ton GNU</em> est sous licence MIT, les sources sont disponibles <a href="https://github.com/mrtino/ChooseYourDistro">ici</a>, ainsi que la <a href="https://p3t3b3.deviantart.com/art/Tondo-F-Icon-Set-OS-327759704">favicon (par P3T3B3)</a>.<br/>Si ce site te plaît et que tu veux récompenser mon dur labeur, tu peux me donner de l'argent <a href="bitcoin:1CWcdZ2yfJQvsBzYp935h16PJaSq7jLSAn">en Bitcoin</a> ou sur <a href="https://paypal.me/monsieurtino">PayPal</a> !</p>
     </footer>
 
 
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="jquery.min.js"></script>
     <script src="questions.js"></script>
     <script src="results.js"></script>
   </body>

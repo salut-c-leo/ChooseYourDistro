@@ -5,9 +5,16 @@ $('.btn-infosi').click(function() {
 });
 $('.btn-ootb').click(function() {
     $('#ootb').hide();
+    $('#inter').show();
+    $('.btn-restart').show();
+});
+
+$('.btn-inter').click(function() {
+    $('#inter').hide();
     $('#old').show();
     $('.btn-restart').show();
 });
+
 $('.btn-olds').click(function() {
     $('#old').hide();
     $('#rolling').show();
@@ -36,6 +43,7 @@ $('.btn-restart').click(function() {
     $('.btn-restart').hide();
     $('#infosi').show();
     $('#ootb').hide();
+    $('#inter').hide();
     $('#old').hide();
     $('#rolling').hide();
     $('#inssi').hide();
