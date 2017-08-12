@@ -32,6 +32,11 @@ $('.btn-vold').click(function() {
 });
 $('.btn-rolling').click(function() {
     $('#rolling').hide();
+    $('#systemd').show();
+    $('.btn-restart').show();
+});
+$('.btn-systemd').click(function() {
+    $('#systemd').hide();
     $('#inssi').show();
     $('.btn-restart').show();
 });
@@ -46,6 +51,7 @@ $('.btn-restart').click(function() {
     $('#inter').hide();
     $('#old').hide();
     $('#rolling').hide();
+    $('#systemd').hide();
     $('#inssi').hide();
     $('#Result').hide();
 });
