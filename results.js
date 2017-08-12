@@ -8,8 +8,8 @@ var arch = 0;
     lfs = 0;
     ubuntu = 0;
     voidlinux = 0;
-   /* windows = 0; La question sur l'interface ne fonctionne plus, mais on garde quand même au cas où
-    macos = 0; */ 
+    windows = 0;
+    macos = 0;
 
 var distros = []; // Un tableau qui permettra de sortir la meilleure distribution
 
@@ -47,14 +47,14 @@ document.getElementById('btn-ootbd').onclick = function() { // Au contraire, si 
   gentoo = ++gentoo;
   lfs = ++lfs;
 };
-/* document.getElementById('btn-windows').onclick = function() { // Si l'utilisateur veut une interface Windows-like, Windows gagne un point, on met macOS à 0
+document.getElementById('btn-windows').onclick = function() { // Si l'utilisateur veut une interface Windows-like, Windows gagne un point, on met macOS à 0
     windows = 1;
     macos = 0;
 };
 document.getElementById('btn-macos').onclick = function() { // L'inverse de l'autre fonction
     macos = 1;
     windows = 0;
-}; */
+};
 document.getElementById('btn-olds').onclick = function() { // Si l'ordi est récent on va mettre des distros récentes ou avec GNOME/KDE par défaut
   fedora = ++fedora;
   ubuntu = ++ubuntu;
@@ -200,14 +200,14 @@ function showResult() { // Merci à @Sp3r4z pour cette fonction super utile !
   $("#resultat").text(distros[0].distro);
 };
 
-/* if (windows != 0) { // On affiche le texte prévu pour l'interface Windows-like (et on désactive l'interface macOS, on sait jamais)
+if (windows != 0) { // On affiche le texte prévu pour l'interface Windows-like (et on désactive l'interface macOS, on sait jamais)
     $('#windowschosen').show();
     $('#macoschosen').hide();
-};
+}
 if (macos != 0) { // Et inversement
     $('#macoschosen').show();
     $('#windowschosen').hide();
-}; */
+}
 
 document.getElementById('btn-restart').onclick = function() { // En appuyant sur le bouton "Recommencer", on remet les variables à zéro
   arch = 0;
@@ -218,7 +218,7 @@ document.getElementById('btn-restart').onclick = function() { // En appuyant sur
   puppy = 0;
   gentoo = 0;
   ubuntu = 0;
-/*  windows = 0;
-  macos = 0; */
+  windows = 0;
+  macos = 0;
   distros = [];
 };
