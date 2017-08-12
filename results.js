@@ -198,16 +198,16 @@ function showResult() { // Merci à @Sp3r4z pour cette fonction super utile !
     case 'Devuan': $("#lien").attr("href", "https://devuan.org"); $("#gendisk").show(); break;
   };
   $("#resultat").text(distros[0].distro);
-};
 
-if (windows != 0) { // On affiche le texte prévu pour l'interface Windows-like (et on désactive l'interface macOS, on sait jamais)
-    $('#windowschosen').show();
-    $('#macoschosen').hide();
-}
-if (macos != 0) { // Et inversement
-    $('#macoschosen').show();
-    $('#windowschosen').hide();
-}
+  if (windows != 0) { // On affiche le texte prévu pour l'interface Windows-like (et on désactive l'interface macOS)
+      $('#windowschosen').show();
+      $('#macoschosen').hide();
+  }
+  if (macos != 0) { // Et inversement
+      $('#macoschosen').show();
+      $('#windowschosen').hide();
+  }
+};
 
 document.getElementById('btn-restart').onclick = function() { // En appuyant sur le bouton "Recommencer", on remet les variables à zéro
   arch = 0;
